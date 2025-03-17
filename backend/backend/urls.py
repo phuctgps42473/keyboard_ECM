@@ -27,6 +27,9 @@ urlpatterns = [
     path("api/property/<int:pk>", views.PropertyView.as_view(), name="property_detail"),
     path("api/product", views.ImageView.as_view(), name="image"),
 
+    path("api/product-variant", views.ProductVariantView.as_view(), name="product_variant"),
+    path("api/product-variant/<int:pk>", views.ProductVariantView.as_view(), name="product_variant_detail"),
+
     path("api/token", TokenObtainPairView.as_view(), name="get_token"),
     path("api/token/refresh/", TokenRefreshView.as_view(), name="refresh_token"),
     path("api-auth/", include("rest_framework.urls"))

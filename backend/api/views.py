@@ -73,3 +73,14 @@ class ImageView(
     serializer_class = serializer.ProductSerializer
     permission_classes = [AllowAny]
 
+
+# PRODUCT VARIANTS
+class ProductVariantView(
+    generics.ListAPIView,
+    generics.CreateAPIView,
+    generics.UpdateAPIView,
+    generics.DestroyAPIView,
+):
+    queryset = models.Variant.objects.all()
+    serializer_class = serializer.VariantSerializer
+    permission_classes = [AllowAny]
